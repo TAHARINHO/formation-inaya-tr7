@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatisez votre Entreprise 2026 | Ï-NAYA Formation × TR7 Agency Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f6fa;
+  color: #1a1a2e;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* ===== CSS VARIABLES — TR7 DESIGN SYSTEM ===== */
+:root {
+  --bg: #f5f6fa;
+  --bg-white: #ffffff;
+  --blue: #4361ee;
+  --violet: #7c3aed;
+  --cyan: #00d4ff;
+  --gradient: linear-gradient(135deg, #4361ee 0%, #7c3aed 50%, #00d4ff 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(67,97,238,0.08) 0%, rgba(124,58,237,0.08) 50%, rgba(0,212,255,0.06) 100%);
+  --text-primary: #1a1a2e;
+  --text-secondary: #6c6c8a;
+  --text-muted: #9a9ab0;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --border: #e8e8f0;
+  --shadow-sm: 0 2px 8px rgba(26,26,46,0.06);
+  --shadow-md: 0 8px 30px rgba(26,26,46,0.08);
+  --shadow-lg: 0 20px 60px rgba(26,26,46,0.10);
+  --shadow-color: 0 8px 30px rgba(67,97,238,0.20);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0;
+}
+.nav-brand .logo-inaya-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+.nav-brand .logo-tr7-img {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+.brand-sep {
+  font-size: 13px; color: var(--text-muted); font-weight: 300;
+}
+.nav-links { display: flex; gap: 12px; list-style: none; margin: 0 auto; }
+.nav-links a {
+  text-decoration: none; font-size: 12px; font-weight: 700;
+  color: var(--violet); letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 50px;
+  border: 1.5px solid rgba(124,58,237,0.15);
+  background: rgba(245,246,250,0.8);
+  transition: all 0.3s ease;
+}
+.nav-links a:hover {
+  background: var(--gradient); color: white; border-color: transparent;
+  box-shadow: 0 4px 15px rgba(67,97,238,0.3); transform: translateY(-1px);
+}
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gradient); color: white;
+  padding: 12px 28px; border-radius: 50px; font-size: 14px; font-weight: 800;
+  text-decoration: none; border: none; cursor: pointer;
+  box-shadow: var(--shadow-color); letter-spacing: 0.02em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(67,97,238,0.30); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); margin: 5px 0; transition: 0.3s; }
+
+/* ===== SECTION SEPARATOR ===== */
+.section-sep {
+  max-width: 1100px; margin: 0 auto;
+  border: none; border-top: 1px solid #e0e0e8;
+  opacity: 0.5;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 100px 24px 60px; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(67,97,238,0.12), transparent 70%);
+  top: -150px; right: -100px; pointer-events: none;
+}
+.hero::after {
+  content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.08), transparent 70%);
+  bottom: -100px; left: -100px; pointer-events: none;
+}
+.hero-inner {
+  max-width: 900px; text-align: center; position: relative; z-index: 1;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(124,58,237,0.15);
+  border-radius: 24px; padding: 60px 48px;
+  box-shadow: 0 0 80px rgba(67,97,238,0.08), inset 0 0 60px rgba(255,255,255,0.5);
+}
+.hero-stars {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
+}
+.hero-stars .star {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 1px currentColor;
+}
+.hero-stars .star.blue { color: rgba(67,97,238,0.6); background: rgba(67,97,238,0.9); }
+.hero-stars .star.violet { color: rgba(124,58,237,0.5); background: rgba(124,58,237,0.8); }
+.hero-stars .star.cyan { color: rgba(0,212,255,0.5); background: rgba(0,212,255,0.8); }
+.hero-stars .star.white { color: rgba(200,200,220,0.5); background: rgba(220,220,240,0.9); }
+
+.hero-eyebrow {
+  display: inline-block; padding: 6px 16px; border-radius: 50px;
+  background: var(--gradient-soft); border: 1px solid rgba(67,97,238,0.15);
+  font-size: 12px; font-weight: 700; letter-spacing: 0.15em;
+  color: var(--violet); text-transform: uppercase; margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(36px, 6vw, 72px); font-weight: 900; line-height: 1.05;
+  letter-spacing: -0.03em; color: var(--text-primary);
+}
+.hero h1 span {
+  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .subtitle {
+  font-size: clamp(16px, 2vw, 20px); color: var(--text-secondary);
+  margin-top: 20px; font-style: italic; max-width: 700px; margin-left: auto; margin-right: auto;
+}
+.hero-stats {
+  display: flex; justify-content: center; gap: 48px; margin-top: 48px; flex-wrap: wrap;
+}
+.hero-stat .num {
+  font-size: clamp(36px, 5vw, 56px); font-weight: 900;
+  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1;
+}
+.hero-stat .lbl {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  color: var(--text-muted); margin-top: 6px; text-transform: uppercase;
+}
+.hero-actions { display: flex; gap: 16px; justify-content: center; margin-top: 48px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gradient); color: white;
+  padding: 16px 32px; border-radius: 50px; font-size: 15px; font-weight: 700;
+  text-decoration: none; border: none; cursor: pointer;
+  box-shadow: var(--shadow-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(67,97,238,0.35); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg-white); color: var(--text-primary);
+  padding: 16px 32px; border-radius: 50px; font-size: 15px; font-weight: 700;
+  text-decoration: none; border: 1px solid var(--border); cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+/* ===== SECTIONS COMMON ===== */
+section { padding: 80px 24px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-eyebrow {
+  display: inline-block; padding: 6px 16px; border-radius: 50px;
+  background: var(--gradient-soft); border: 1px solid rgba(67,97,238,0.12);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--violet); text-transform: uppercase; margin-bottom: 16px;
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 42px); font-weight: 800;
+  letter-spacing: -0.02em; color: var(--text-primary); line-height: 1.15;
+}
+.section-subtitle {
+  font-size: 16px; color: var(--text-secondary); margin-top: 12px;
+  max-width: 700px; font-style: italic;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--bg-white); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); padding: 32px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(232,232,240,0.6);
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+/* ===== ADN SECTION ===== */
+#adn {
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(124,58,237,0.04) 50%, var(--bg) 100%);
+}
+#adn .pillars-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px; margin-top: 40px;
+}
+#adn .pillar {
+  text-align: center; padding: 36px 24px; position: relative; overflow: hidden;
+  transition: all 0.4s ease;
+}
+#adn .pillar::after {
+  content: ''; position: absolute; inset: 0; border-radius: var(--radius);
+  opacity: 0; transition: opacity 0.4s ease;
+}
+#adn .pillar:hover::after { opacity: 1; }
+#adn .pillar:nth-child(1)::after { background: radial-gradient(circle at 50% 50%, rgba(250,204,21,0.18), transparent 70%); }
+#adn .pillar:nth-child(2)::after { background: radial-gradient(circle at 50% 50%, rgba(251,146,60,0.18), transparent 70%); }
+#adn .pillar:nth-child(3)::after { background: radial-gradient(circle at 50% 50%, rgba(59,130,246,0.18), transparent 70%); }
+#adn .pillar:nth-child(4)::after { background: radial-gradient(circle at 50% 50%, rgba(74,222,128,0.18), transparent 70%); }
+#adn .pillar:nth-child(1):hover { box-shadow: 0 0 35px rgba(250,204,21,0.25), var(--shadow-md); border-color: rgba(250,204,21,0.3); }
+#adn .pillar:nth-child(2):hover { box-shadow: 0 0 35px rgba(251,146,60,0.25), var(--shadow-md); border-color: rgba(251,146,60,0.3); }
+#adn .pillar:nth-child(3):hover { box-shadow: 0 0 35px rgba(59,130,246,0.25), var(--shadow-md); border-color: rgba(59,130,246,0.3); }
+#adn .pillar:nth-child(4):hover { box-shadow: 0 0 35px rgba(74,222,128,0.25), var(--shadow-md); border-color: rgba(74,222,128,0.3); }
+#adn .pillar-num {
+  font-size: 36px; font-weight: 900; position: relative; z-index: 1;
+}
+#adn .pillar:nth-child(1) .pillar-num { color: #eab308; }
+#adn .pillar:nth-child(2) .pillar-num { color: #f97316; }
+#adn .pillar:nth-child(3) .pillar-num { color: #3b82f6; }
+#adn .pillar:nth-child(4) .pillar-num { color: #22c55e; }
+#adn .pillar-title {
+  font-size: 14px; font-weight: 800; letter-spacing: 0.15em;
+  color: var(--text-primary); margin-top: 8px; text-transform: uppercase;
+  position: relative; z-index: 1;
+}
+#adn .pillar-desc {
+  font-size: 13px; color: var(--text-secondary); margin-top: 10px; line-height: 1.55;
+  position: relative; z-index: 1;
+}
+
+/* ===== PROGRAMME SECTION ===== */
+#programme .modules-list { margin-top: 40px; display: flex; flex-direction: column; gap: 14px; }
+.module-row {
+  background: var(--bg-white); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--blue);
+  transition: all 0.3s ease;
+  cursor: pointer; overflow: hidden;
+}
+.module-row:hover { box-shadow: var(--shadow-md); border-left-color: var(--violet); }
+.module-row .module-header {
+  display: flex; align-items: center; gap: 24px;
+  padding: 24px 28px;
+}
+.module-row .module-header .arrow {
+  margin-left: auto; font-size: 18px; color: var(--text-muted);
+  transition: transform 0.3s ease;
+}
+.module-row.open .module-header .arrow { transform: rotate(180deg); color: var(--violet); }
+.module-row .module-expand {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--gradient-soft);
+}
+.module-row.open .module-expand { max-height: 600px; }
+.module-expand-inner {
+  padding: 0 28px 24px 28px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.module-expand-inner .expand-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  color: var(--violet); text-transform: uppercase; margin-bottom: 10px;
+}
+.module-expand-inner .expand-item {
+  font-size: 13px; color: var(--text-primary); margin-bottom: 8px;
+  padding-left: 16px; position: relative; line-height: 1.5;
+}
+.module-expand-inner .expand-item::before {
+  content: '▸'; position: absolute; left: 0; color: var(--blue); font-weight: 700;
+}
+.module-num {
+  width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gradient); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px;
+}
+.module-title { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+.module-desc { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+/* ===== MODULE DETAILS ===== */
+#details .module-detail {
+  margin-top: 40px; background: var(--bg-white);
+  border-radius: var(--radius); box-shadow: var(--shadow-sm);
+  overflow: hidden; border: 1px solid var(--border);
+}
+.mod-header {
+  background: var(--gradient); padding: 32px 36px; color: white;
+  display: flex; align-items: center; gap: 24px;
+  position: relative; overflow: hidden;
+}
+.mod-header::after {
+  content: ''; position: absolute; width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+  right: -50px; top: -50px;
+}
+.mod-header .bignum { font-size: 64px; font-weight: 900; opacity: 0.4; line-height: 1; }
+.mod-header .info { flex: 1; }
+.mod-header .mod-name { font-size: 24px; font-weight: 800; }
+.mod-header .mod-sub { font-size: 14px; opacity: 0.85; font-style: italic; margin-top: 4px; }
+.mod-header .mod-duree {
+  background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 50px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.1em; white-space: nowrap;
+}
+.mod-body { padding: 32px 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.mod-body .col-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+  color: var(--violet); text-transform: uppercase; margin-bottom: 14px;
+}
+.mod-body .obj-item {
+  display: flex; gap: 10px; margin-bottom: 12px;
+  font-size: 14px; color: var(--text-primary); line-height: 1.5;
+}
+.mod-body .obj-item::before {
+  content: '▸'; color: var(--blue); font-weight: 700; flex-shrink: 0;
+}
+.mod-body .examples-box {
+  background: var(--gradient-soft); border-radius: var(--radius-xs);
+  padding: 20px 24px; border-left: 3px solid var(--violet);
+}
+.mod-body .example-item {
+  display: flex; gap: 10px; margin-bottom: 8px;
+  font-size: 13px; color: var(--text-secondary); line-height: 1.5;
+}
+.mod-body .example-item::before {
+  content: '→'; color: var(--violet); font-weight: 700; flex-shrink: 0;
+}
+
+/* ===== PLANNING SECTION ===== */
+#planning .days-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px; margin-top: 40px;
+}
+.day-card { padding: 0; overflow: hidden; }
+.day-card .day-header {
+  background: var(--gradient); padding: 24px 28px; color: white;
+  position: relative; overflow: hidden;
+}
+.day-card .day-header::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.15), transparent 60%);
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.day-card:hover .day-header::after { opacity: 1; }
+.day-card:hover { box-shadow: 0 0 30px rgba(124,58,237,0.12), var(--shadow-lg); }
+.day-card .day-label { font-size: 12px; font-weight: 700; letter-spacing: 0.15em; opacity: 0.8; }
+.day-card .day-title { font-size: 22px; font-weight: 800; margin-top: 4px; }
+.day-card .day-body { padding: 24px 28px; }
+.day-card .session { margin-bottom: 20px; }
+.day-card .session:last-child { margin-bottom: 0; }
+.day-card .session-time {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--violet); text-transform: uppercase; margin-bottom: 6px;
+}
+.day-card .session-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.day-card .session-desc { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+/* ===== LIVRABLES ===== */
+#livrables .livrables-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px; margin-top: 40px;
+}
+.livrable-card {
+  text-align: center; padding: 36px 24px; position: relative; overflow: hidden;
+}
+.livrable-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(67,97,238,0.06), transparent 70%);
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.livrable-card:hover::before { opacity: 1; }
+.livrable-card:nth-child(1):hover { box-shadow: 0 0 25px rgba(67,97,238,0.12), var(--shadow-md); }
+.livrable-card:nth-child(2):hover { box-shadow: 0 0 25px rgba(124,58,237,0.12), var(--shadow-md); }
+.livrable-card:nth-child(3):hover { box-shadow: 0 0 25px rgba(0,212,255,0.12), var(--shadow-md); }
+.livrable-card:nth-child(4):hover { box-shadow: 0 0 25px rgba(67,97,238,0.12), var(--shadow-md); }
+.livrable-num {
+  width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 16px;
+  background: var(--gradient); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px;
+}
+.livrable-title { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+.livrable-sub { font-size: 12px; color: var(--violet); font-weight: 600; margin-top: 4px; }
+.livrable-desc { font-size: 13px; color: var(--text-secondary); margin-top: 10px; line-height: 1.55; }
+
+/* ===== OBJECTIFS ===== */
+#objectifs .obj-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;
+}
+.obj-card-dark {
+  background: var(--text-primary); color: white; border-radius: var(--radius);
+  padding: 36px; position: relative; overflow: hidden;
+}
+.obj-card-dark::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--gradient);
+}
+.obj-card-dark .card-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--cyan); text-transform: uppercase;
+}
+.obj-card-dark h3 { font-size: 26px; font-weight: 800; margin-top: 10px; }
+.obj-card-dark p { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 16px; line-height: 1.65; }
+.obj-card-dark .badge-line {
+  margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 12px; color: var(--cyan); font-weight: 700; letter-spacing: 0.15em;
+}
+.obj-list-card { }
+.obj-list-card .obj-item-check {
+  display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px;
+}
+.obj-item-check .check {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gradient); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800;
+}
+.obj-item-check .obj-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.obj-item-check .obj-desc { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+
+/* ===== TARIFS ===== */
+#tarifs { background: var(--bg-white); }
+#tarifs .tarif-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;
+}
+.tarif-main {
+  background: var(--bg); border-radius: var(--radius);
+  padding: 36px; border: 1px solid var(--border);
+}
+.tarif-main .tarif-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--violet); text-transform: uppercase;
+}
+.tarif-main h3 { font-size: 22px; font-weight: 800; margin-top: 8px; color: var(--text-primary); }
+.tarif-main .tarif-sub { font-size: 13px; color: var(--text-secondary); font-style: italic; margin-top: 4px; }
+.tarif-price {
+  margin-top: 28px; display: flex; align-items: baseline; gap: 4px;
+}
+.tarif-price .amount {
+  font-size: 48px; font-weight: 900;
+  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1;
+}
+.tarif-price .currency { font-size: 24px; font-weight: 700; color: var(--text-muted); }
+.tarif-price .per { font-size: 14px; color: var(--text-muted); margin-left: 4px; }
+.tarif-breakdown { margin-top: 24px; }
+.tarif-line {
+  display: flex; justify-content: space-between; padding: 10px 0;
+  border-bottom: 1px solid var(--border); font-size: 14px;
+}
+.tarif-line .label { color: var(--text-secondary); }
+.tarif-line .value { font-weight: 600; color: var(--text-primary); }
+.tarif-total {
+  display: flex; justify-content: space-between; padding: 14px 0;
+  font-size: 16px; font-weight: 700; color: var(--text-primary);
+  border-top: 2px solid var(--blue);
+  margin-top: 4px;
+}
+.tarif-details h3 { font-size: 20px; font-weight: 800; color: var(--text-primary); }
+.tarif-details .detail-item {
+  display: flex; gap: 12px; margin-top: 16px;
+}
+.detail-item .detail-key {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--violet); text-transform: uppercase; min-width: 90px;
+}
+.detail-item .detail-val { font-size: 14px; color: var(--text-secondary); }
+
+/* ===== PUBLIC SECTION ===== */
+#public .public-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;
+}
+.public-list .pub-item {
+  display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px;
+}
+.pub-item .pub-check {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gradient); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800;
+}
+.pub-item .pub-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.pub-item .pub-desc { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+.prereq-blocks .prereq-block {
+  background: var(--bg); border-radius: var(--radius-xs);
+  padding: 20px; margin-bottom: 14px; border-left: 3px solid var(--violet);
+}
+.prereq-block .prereq-cat {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+  color: var(--violet); text-transform: uppercase; margin-bottom: 6px;
+}
+.prereq-block .prereq-txt { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+
+/* ===== FORMATEUR ===== */
+#formateur .formateur-grid {
+  display: grid; grid-template-columns: 300px 1fr; gap: 36px; margin-top: 40px;
+}
+.formateur-portrait {
+  background: var(--text-primary); border-radius: var(--radius); padding: 36px;
+  color: white; text-align: center; position: relative; overflow: hidden;
+}
+.formateur-portrait::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--gradient);
+}
+.formateur-photo {
+  width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 20px;
+  object-fit: cover; border: 3px solid rgba(67,97,238,0.4);
+  box-shadow: 0 0 20px rgba(67,97,238,0.3);
+  display: block;
+}
+.formateur-portrait .f-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--cyan); text-transform: uppercase;
+}
+.formateur-portrait .f-name { font-size: 22px; font-weight: 800; margin-top: 8px; }
+.formateur-portrait .f-role { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+.formateur-portrait .f-quote {
+  font-size: 13px; font-style: italic; color: rgba(255,255,255,0.7);
+  margin-top: 20px; line-height: 1.55; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.formateur-right .skill-row {
+  display: flex; gap: 12px; margin-bottom: 16px;
+}
+.skill-row .skill-key {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--violet); text-transform: uppercase; min-width: 140px; padding-top: 2px;
+}
+.skill-row .skill-val { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+.stack-chips {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px;
+}
+.chip {
+  padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 600;
+  background: var(--gradient-soft); color: var(--violet);
+  border: 1px solid rgba(124,58,237,0.15);
+}
+
+/* ===== FINANCEMENT ===== */
+#financement .finance-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;
+}
+.funding-item { margin-bottom: 24px; }
+.funding-item .funding-name { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.funding-item .funding-desc { font-size: 13px; color: var(--text-secondary); margin-top: 6px; line-height: 1.55; }
+.steps-list .step-item {
+  display: flex; gap: 16px; margin-bottom: 24px;
+}
+.step-item .step-num {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gradient); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px;
+}
+.step-item .step-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+.step-item .step-desc { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  background: var(--text-primary); padding: 80px 24px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(67,97,238,0.2), transparent 70%);
+  top: -200px; right: -100px; pointer-events: none;
+}
+.cta-section::after {
+  content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.15), transparent 70%);
+  bottom: -150px; left: -100px; pointer-events: none;
+}
+.cta-section .section-inner { position: relative; z-index: 1; }
+.cta-section .cta-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.25em;
+  color: var(--cyan); text-transform: uppercase;
+}
+.cta-section h2 {
+  font-size: clamp(28px, 4vw, 48px); font-weight: 900; color: white;
+  margin-top: 16px; line-height: 1.1;
+}
+.cta-section h2 span {
+  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-section .cta-desc {
+  font-size: 16px; color: rgba(255,255,255,0.65); margin-top: 16px;
+  max-width: 600px; margin-left: auto; margin-right: auto; font-style: italic;
+}
+.cta-section .cta-actions { margin-top: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ===== iClosed Modal Overlay ===== */
+.iclosed-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  justify-content: center; align-items: center; padding: 24px;
+}
+.iclosed-overlay.active { display: flex; }
+.iclosed-modal {
+  background: white; border-radius: 20px; width: 100%; max-width: 700px;
+  max-height: 90vh; overflow: hidden; position: relative;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+  animation: modalSlideUp 0.3s ease;
+}
+@keyframes modalSlideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.iclosed-modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; border-bottom: 1px solid var(--border);
+}
+.iclosed-modal-header h3 { font-size: 18px; font-weight: 800; color: var(--text-primary); }
+.iclosed-close {
+  width: 36px; height: 36px; border-radius: 50%; border: none;
+  background: var(--bg); cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-secondary); transition: all 0.2s;
+  flex-shrink: 0;
+}
+.iclosed-close:hover { background: var(--error); color: white; }
+.iclosed-modal iframe { width: 100%; height: 650px; border: none; display: block; }
+
+/* ===== Contact Form Modal ===== */
+.contact-form-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  justify-content: center; align-items: center; padding: 24px;
+}
+.contact-form-overlay.active { display: flex; }
+.contact-form-modal {
+  background: white; border-radius: 20px; width: 100%; max-width: 520px;
+  padding: 40px; position: relative;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+  animation: modalSlideUp 0.3s ease;
+}
+.contact-form-modal h3 { font-size: 22px; font-weight: 800; color: var(--text-primary); margin-bottom: 24px; }
+.contact-form-modal .form-group { margin-bottom: 16px; }
+.contact-form-modal label {
+  display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--text-secondary); text-transform: uppercase; margin-bottom: 6px;
+}
+.contact-form-modal input,
+.contact-form-modal textarea {
+  width: 100%; padding: 12px 16px; border: 1.5px solid var(--border);
+  border-radius: 10px; font-family: inherit; font-size: 14px;
+  transition: border-color 0.2s; outline: none; color: var(--text-primary);
+}
+.contact-form-modal input:focus,
+.contact-form-modal textarea:focus { border-color: var(--violet); }
+.contact-form-modal textarea { resize: vertical; min-height: 100px; }
+.contact-form-modal .form-submit {
+  width: 100%; padding: 14px; border: none; border-radius: 50px;
+  background: var(--gradient); color: white; font-size: 15px; font-weight: 700;
+  cursor: pointer; margin-top: 8px; font-family: inherit;
+  box-shadow: var(--shadow-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.contact-form-modal .form-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(67,97,238,0.30); }
+
+/* ===== CONTACT SECTION ===== */
+.contact-section { background: var(--bg-white); padding: 60px 24px; }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  max-width: 900px; margin: 0 auto;
+}
+.contact-card .contact-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  color: var(--violet); text-transform: uppercase; margin-bottom: 8px;
+}
+.contact-card .contact-name { font-size: 18px; font-weight: 800; color: var(--text-primary); }
+.contact-card .contact-role { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+.contact-card .contact-info { margin-top: 16px; }
+.contact-card .contact-line {
+  display: flex; gap: 10px; align-items: center;
+  font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;
+}
+.contact-line .ic { font-size: 16px; width: 20px; text-align: center; }
+
+/* ===== FOOTER ===== */
+footer { background: var(--text-primary); padding: 32px 24px; text-align: center; }
+.footer-logos {
+  display: flex; justify-content: center; align-items: center; gap: 32px;
+  margin-bottom: 20px; flex-wrap: wrap;
+}
+.footer-logo-img { height: 44px; width: auto; object-fit: contain; }
+.footer-logo-img.tr7 { height: 30px; }
+.footer-qualiopi {
+  height: 40px; background: white; border-radius: 6px; padding: 4px 8px;
+  object-fit: contain;
+}
+footer .copyright { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ===== PROGRAMME TABLE ===== */
+#programme-detail .prog-table { margin-top: 32px; overflow-x: auto; }
+.prog-table table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.prog-table thead th {
+  background: var(--text-primary); color: white; padding: 14px 18px;
+  text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+}
+.prog-table .mod-row td {
+  background: var(--gradient-soft); font-weight: 700; color: var(--violet);
+  padding: 12px 18px; font-size: 13px;
+}
+.prog-table tbody td { padding: 10px 18px; border-bottom: 1px solid var(--border); }
+.prog-table tbody tr:nth-child(even):not(.mod-row) { background: #fafbff; }
+.prog-table .seance, .prog-table .duree { text-align: center; font-weight: 600; color: var(--text-secondary); }
+.prog-table .tarif { text-align: center; font-weight: 600; color: var(--violet); }
+.prog-table .total td {
+  font-weight: 800; padding: 14px 18px;
+  background: var(--gradient); color: white;
+}
+
+/* ===== MODALITES ===== */
+#modalites .moda-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px; margin-top: 40px;
+}
+.moda-card { text-align: center; padding: 32px 24px; }
+.moda-icon { font-size: 36px; margin-bottom: 16px; }
+.moda-title {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--text-primary); text-transform: uppercase;
+}
+.moda-desc { font-size: 13px; color: var(--text-secondary); margin-top: 10px; line-height: 1.55; }
+.handicap-note {
+  margin-top: 24px; padding: 16px 24px; border-radius: var(--radius-xs);
+  background: var(--gradient-soft); border-left: 3px solid var(--violet);
+  font-size: 13px; color: var(--text-secondary); text-align: center;
+}
+
+/* ===== REFERENCES ===== */
+#references .ref-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;
+}
+.ref-stat {
+  text-align: center; background: var(--bg-white); border-radius: var(--radius-sm);
+  padding: 28px 16px; box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+}
+.ref-stat .ref-num {
+  font-size: 36px; font-weight: 900;
+  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ref-stat .ref-lbl {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--text-muted); margin-top: 6px; text-transform: uppercase;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: var(--bg-white); padding: 24px; gap: 16px;
+    box-shadow: var(--shadow-md); border-top: 1px solid var(--border);
+    z-index: 99;
+  }
+  .hero-stats { gap: 24px; }
+  .hero-stat .num { font-size: 36px; }
+  #objectifs .obj-grid,
+  #tarifs .tarif-grid,
+  #public .public-grid,
+  #financement .finance-grid,
+  .contact-grid { grid-template-columns: 1fr; }
+  #formateur .formateur-grid { grid-template-columns: 1fr; }
+  .mod-body { grid-template-columns: 1fr; }
+  .mod-header { flex-direction: column; text-align: center; }
+  .mod-header .bignum { font-size: 48px; }
+  #references .ref-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .iclosed-modal iframe { height: 500px; }
+  .module-expand-inner { grid-template-columns: 1fr; }
+  .hero-inner { padding: 40px 24px; }
+}
+@media (max-width: 480px) {
+  section { padding: 60px 16px; }
+  .card { padding: 24px 20px; }
+  .hero { padding: 80px 16px 40px; }
+  .nav-cta { padding: 10px 16px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img src="logo-inaya.png" alt="Ï-Naya Formation" class="logo-inaya-img" loading="eager">
+      <span class="brand-sep">×</span>
+      <img src="logo-tr7.png" alt="TR7 Agency Studio" class="logo-tr7-img" loading="eager">
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#programme">Programme</a></li>
+      <li><a href="#details">Modules</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#financement">Financement</a></li>
+      <li><a href="#formateur">Formateur</a></li>
+    </ul>
+    <a href="#contact-section" class="nav-cta">
+      📞 Réserver votre appel
+    </a>
+    <button class="hamburger" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-stars" id="starField"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Plaquette de formation · Édition 2026</div>
+    <h1>Automatisez<br><span>votre Entreprise</span></h1>
+    <p class="subtitle">IA & Automatisation Business · Performance & Scalabilité</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">3</div><div class="lbl">Jours intensifs</div></div>
+      <div class="hero-stat"><div class="num">24h</div><div class="lbl">De formation</div></div>
+      <div class="hero-stat"><div class="num">5</div><div class="lbl">Modules experts</div></div>
+      <div class="hero-stat"><div class="num">3-5</div><div class="lbl">Automatisations livrées</div></div>
+    </div>
+    <div class="hero-actions">
+      <button onclick="openIClosed()" class="btn-primary">📞 Réserver votre appel</button>
+      <a href="#programme" class="btn-secondary">Découvrir le programme →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== ADN ===== -->
+<section id="adn">
+  <div class="section-inner">
+    <div class="section-eyebrow">Notre ADN</div>
+    <h2 class="section-title">Vous former, c'est investir<br>dans votre réussite.</h2>
+    <p class="section-subtitle">Notre cœur de métier : vous faire monter en compétences sur les technologies qui transforment réellement les entreprises.</p>
+    <div class="pillars-grid">
+      <div class="card pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Former</div>
+        <div class="pillar-desc">Transmettre une expertise métier immédiatement opérationnelle.</div>
+      </div>
+      <div class="card pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Transmettre</div>
+        <div class="pillar-desc">Partager le savoir terrain de formateurs en activité.</div>
+      </div>
+      <div class="card pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Excellence</div>
+        <div class="pillar-desc">Exigence technique et pédagogique à chaque étape.</div>
+      </div>
+      <div class="card pillar">
+        <div class="pillar-num">04</div>
+        <div class="pillar-title">Agilité</div>
+        <div class="pillar-desc">Contenus évolutifs, en phase avec les attentes du marché.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== PROGRAMME OVERVIEW ===== -->
+<section id="programme" style="background: var(--bg-white);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Programme</div>
+    <h2 class="section-title">La formation en 5 modules</h2>
+    <p class="section-subtitle">Un parcours intensif de 3 jours, 30% théorie et 70% pratique, pensé pour que chaque stagiaire reparte avec 3 à 5 automatisations réelles déployées.</p>
+    <div class="modules-list">
+
+      <div class="module-row" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-num">01</div>
+          <div>
+            <div class="module-title">Comprendre & Identifier</div>
+            <div class="module-desc">Diagnostic stratégique, audit des processus et calcul du ROI des automatisations.</div>
+          </div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="module-expand"><div class="module-expand-inner">
+          <div>
+            <div class="expand-label">Objectifs & Compétences</div>
+            <div class="expand-item">Comprendre l'écosystème actuel de l'IA et de l'automation</div>
+            <div class="expand-item">Lister les tâches répétitives à faible valeur ajoutée</div>
+            <div class="expand-item">Estimer le gain d'heures et d'argent par automatisation</div>
+            <div class="expand-item">Prioriser les opportunités selon leur ROI</div>
+          </div>
+          <div>
+            <div class="expand-label">Exemples & Mises en situation</div>
+            <div class="expand-item">Audit opérationnel complet d'un service administratif</div>
+            <div class="expand-item">Calcul du ROI d'une relance devis automatisée</div>
+            <div class="expand-item">Cartographie personnalisée des opportunités</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="module-row" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-num">02</div>
+          <div>
+            <div class="module-title">Mise en place rapide</div>
+            <div class="module-desc">Les premiers Quick Wins avec n8n : communication, données, CRM.</div>
+          </div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="module-expand"><div class="module-expand-inner">
+          <div>
+            <div class="expand-label">Objectifs & Compétences</div>
+            <div class="expand-item">Maîtriser l'interface n8n : nœuds, triggers, structures de données</div>
+            <div class="expand-item">Créer un système de relances emails intelligentes</div>
+            <div class="expand-item">Synchroniser automatiquement un CRM avec plusieurs sources</div>
+            <div class="expand-item">Nettoyer et enrichir des fichiers prospects/clients</div>
+          </div>
+          <div>
+            <div class="expand-label">Exemples & Mises en situation</div>
+            <div class="expand-item">Workflow de relance automatique des devis non signés</div>
+            <div class="expand-item">Pipeline d'enrichissement de contacts depuis LinkedIn</div>
+            <div class="expand-item">Synchronisation bidirectionnelle Airtable → Gmail</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="module-row" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-num">03</div>
+          <div>
+            <div class="module-title">Création d'Agents IA</div>
+            <div class="module-desc">Prompt engineering, RAG et agents autonomes connectés à vos outils.</div>
+          </div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="module-expand"><div class="module-expand-inner">
+          <div>
+            <div class="expand-label">Objectifs & Compétences</div>
+            <div class="expand-item">Structurer des prompts experts pour des résultats professionnels</div>
+            <div class="expand-item">Créer des assistants IA basés sur vos propres documents (RAG)</div>
+            <div class="expand-item">Connecter les LLMs à vos outils pour qu'ils exécutent des actions</div>
+            <div class="expand-item">Construire des agents d'analyse, de rédaction et de classification</div>
+          </div>
+          <div>
+            <div class="expand-label">Exemples & Mises en situation</div>
+            <div class="expand-item">Assistant interne répondant sur votre base documentaire</div>
+            <div class="expand-item">Agent de rédaction automatique de comptes-rendus</div>
+            <div class="expand-item">Classificateur de tickets entrants avec analyse de sentiment</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="module-row" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-num">04</div>
+          <div>
+            <div class="module-title">Système d'acquisition</div>
+            <div class="module-desc">Acquisition automatisée : scraping, qualification, scoring et routage.</div>
+          </div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="module-expand"><div class="module-expand-inner">
+          <div>
+            <div class="expand-label">Objectifs & Compétences</div>
+            <div class="expand-item">Automatiser l'identification des prospects (scraping LinkedIn)</div>
+            <div class="expand-item">Qualifier automatiquement les leads par l'IA</div>
+            <div class="expand-item">Calculer un score de lead dynamique en temps réel</div>
+            <div class="expand-item">Router les prospects chauds vers les bons canaux</div>
+          </div>
+          <div>
+            <div class="expand-label">Exemples & Mises en situation</div>
+            <div class="expand-item">Tunnel complet : LinkedIn → enrichissement → scoring IA → Slack</div>
+            <div class="expand-item">Distribution automatique des leads selon profil et secteur</div>
+            <div class="expand-item">Atelier build : votre premier tunnel d'acquisition end-to-end</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="module-row" onclick="toggleModule(this)">
+        <div class="module-header">
+          <div class="module-num">05</div>
+          <div>
+            <div class="module-title">Architecture & Autonomie</div>
+            <div class="module-desc">Admin, interconnexion, scalabilité, sécurité RGPD et maintenance.</div>
+          </div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="module-expand"><div class="module-expand-inner">
+          <div>
+            <div class="expand-label">Objectifs & Compétences</div>
+            <div class="expand-item">Automatiser la facturation, le suivi de paiement et la gestion documentaire</div>
+            <div class="expand-item">Interconnecter marketing, vente et administration</div>
+            <div class="expand-item">Mettre en place une surveillance anti-rupture de workflow</div>
+            <div class="expand-item">Assurer la conformité RGPD et la sécurité des données</div>
+            <div class="expand-item">Passer à l'échelle sans reconstruire l'existant</div>
+          </div>
+          <div>
+            <div class="expand-label">Exemples & Mises en situation</div>
+            <div class="expand-item">Workflow de facturation automatique Stripe → comptabilité</div>
+            <div class="expand-item">Système de monitoring et d'alertes sur les automatisations</div>
+            <div class="expand-item">Bilan final : revue des 3 à 5 automatisations livrées</div>
+          </div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== OBJECTIFS ===== -->
+<section id="objectifs">
+  <div class="section-inner">
+    <div class="section-eyebrow">Cadre pédagogique</div>
+    <h2 class="section-title">Objectifs & méthode</h2>
+    <div class="obj-grid">
+      <div class="obj-card-dark">
+        <div class="card-eyebrow">Objectif Business</div>
+        <h3>La finalité</h3>
+        <p>Permettre à l'entreprise de gagner en productivité et en scalabilité en remplaçant les processus manuels chronophages par des systèmes automatisés et des agents IA intelligents, tout en assurant l'autonomie technique du stagiaire.</p>
+        <div class="badge-line">3 JOURS · 24 HEURES · INTER / INTRA</div>
+      </div>
+      <div class="card obj-list-card">
+        <div class="section-eyebrow" style="margin-bottom: 20px;">Objectifs pédagogiques</div>
+        <div class="obj-item-check">
+          <div class="check">✓</div>
+          <div><div class="obj-title">Auditer & cartographier</div><div class="obj-desc">Les processus internes pour identifier le potentiel d'automatisation.</div></div>
+        </div>
+        <div class="obj-item-check">
+          <div class="check">✓</div>
+          <div><div class="obj-title">Concevoir & déployer</div><div class="obj-desc">Des workflows automatisés complexes via l'outil n8n.</div></div>
+        </div>
+        <div class="obj-item-check">
+          <div class="check">✓</div>
+          <div><div class="obj-title">Configurer & intégrer</div><div class="obj-desc">Des agents IA (LLMs) dans les processus métiers.</div></div>
+        </div>
+        <div class="obj-item-check">
+          <div class="check">✓</div>
+          <div><div class="obj-title">Maintenir & faire évoluer</div><div class="obj-desc">Son écosystème d'automatisation de manière autonome.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== MODULE DETAILS ===== -->
+<section id="details" style="background: var(--bg-white);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Programme détaillé</div>
+    <h2 class="section-title">Les 5 modules en détail</h2>
+
+    <div class="module-detail">
+      <div class="mod-header">
+        <div class="bignum">01</div>
+        <div class="info"><div class="mod-name">Comprendre & Identifier</div><div class="mod-sub">Diagnostic et cartographie du temps</div></div>
+        <div class="mod-duree">J-1 MATIN · 4H00</div>
+      </div>
+      <div class="mod-body">
+        <div>
+          <div class="col-label">Objectifs & Compétences</div>
+          <div class="obj-item">Comprendre l'écosystème actuel de l'IA et de l'automation</div>
+          <div class="obj-item">Lister les tâches répétitives à faible valeur ajoutée</div>
+          <div class="obj-item">Estimer le gain d'heures et d'argent par automatisation</div>
+          <div class="obj-item">Prioriser les opportunités selon leur ROI</div>
+        </div>
+        <div class="examples-box">
+          <div class="col-label">Exemples & Mises en situation</div>
+          <div class="example-item">Audit opérationnel complet d'un service administratif</div>
+          <div class="example-item">Calcul du ROI d'une relance devis automatisée</div>
+          <div class="example-item">Cartographie personnalisée des opportunités d'automatisation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-detail">
+      <div class="mod-header">
+        <div class="bignum">02</div>
+        <div class="info"><div class="mod-name">Mise en place rapide</div><div class="mod-sub">Les Quick Wins avec n8n</div></div>
+        <div class="mod-duree">J-1 APRÈS-MIDI · 4H00</div>
+      </div>
+      <div class="mod-body">
+        <div>
+          <div class="col-label">Objectifs & Compétences</div>
+          <div class="obj-item">Maîtriser l'interface n8n : nœuds, triggers, structures de données</div>
+          <div class="obj-item">Créer un système de relances emails intelligentes</div>
+          <div class="obj-item">Synchroniser automatiquement un CRM avec plusieurs sources</div>
+          <div class="obj-item">Nettoyer et enrichir des fichiers prospects/clients</div>
+        </div>
+        <div class="examples-box">
+          <div class="col-label">Exemples & Mises en situation</div>
+          <div class="example-item">Workflow de relance automatique des devis non signés</div>
+          <div class="example-item">Pipeline d'enrichissement de contacts depuis LinkedIn</div>
+          <div class="example-item">Synchronisation bidirectionnelle Airtable → Gmail</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-detail">
+      <div class="mod-header">
+        <div class="bignum">03</div>
+        <div class="info"><div class="mod-name">Création d'Agents IA</div><div class="mod-sub">Prompt engineering, RAG & agents autonomes</div></div>
+        <div class="mod-duree">J-2 MATIN · 4H00</div>
+      </div>
+      <div class="mod-body">
+        <div>
+          <div class="col-label">Objectifs & Compétences</div>
+          <div class="obj-item">Structurer des prompts experts pour des résultats professionnels</div>
+          <div class="obj-item">Créer des assistants IA basés sur vos propres documents (RAG)</div>
+          <div class="obj-item">Connecter les LLMs à vos outils pour qu'ils exécutent des actions</div>
+          <div class="obj-item">Construire des agents d'analyse, de rédaction et de classification</div>
+        </div>
+        <div class="examples-box">
+          <div class="col-label">Exemples & Mises en situation</div>
+          <div class="example-item">Assistant interne répondant sur votre base documentaire</div>
+          <div class="example-item">Agent de rédaction automatique de comptes-rendus de réunion</div>
+          <div class="example-item">Classificateur de tickets entrants avec analyse de sentiment</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-detail">
+      <div class="mod-header">
+        <div class="bignum">04</div>
+        <div class="info"><div class="mod-name">Système d'acquisition</div><div class="mod-sub">Le tunnel d'acquisition automatisé</div></div>
+        <div class="mod-duree">J-2 APRÈS-MIDI · 4H00</div>
+      </div>
+      <div class="mod-body">
+        <div>
+          <div class="col-label">Objectifs & Compétences</div>
+          <div class="obj-item">Automatiser l'identification des prospects (scraping LinkedIn)</div>
+          <div class="obj-item">Qualifier automatiquement les leads par l'IA</div>
+          <div class="obj-item">Calculer un score de lead dynamique en temps réel</div>
+          <div class="obj-item">Router les prospects chauds vers les bons canaux (Slack, CRM, email)</div>
+        </div>
+        <div class="examples-box">
+          <div class="col-label">Exemples & Mises en situation</div>
+          <div class="example-item">Tunnel complet : LinkedIn → enrichissement → scoring IA → Slack</div>
+          <div class="example-item">Distribution automatique des leads selon profil et secteur</div>
+          <div class="example-item">Atelier build : votre premier tunnel d'acquisition end-to-end</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-detail">
+      <div class="mod-header">
+        <div class="bignum">05</div>
+        <div class="info"><div class="mod-name">Architecture & Autonomie</div><div class="mod-sub">Système global, scalabilité et maintenance</div></div>
+        <div class="mod-duree">J-3 JOURNÉE · 8H00</div>
+      </div>
+      <div class="mod-body">
+        <div>
+          <div class="col-label">Objectifs & Compétences</div>
+          <div class="obj-item">Automatiser la facturation, le suivi de paiement et la gestion documentaire</div>
+          <div class="obj-item">Interconnecter marketing, vente et administration dans un flux unique</div>
+          <div class="obj-item">Mettre en place une surveillance pour éviter les ruptures de workflow</div>
+          <div class="obj-item">Assurer la conformité RGPD et la sécurité des données</div>
+          <div class="obj-item">Passer à l'échelle sans reconstruire l'existant</div>
+        </div>
+        <div class="examples-box">
+          <div class="col-label">Exemples & Mises en situation</div>
+          <div class="example-item">Workflow de facturation automatique Stripe → comptabilité</div>
+          <div class="example-item">Système de monitoring et d'alertes sur les automatisations critiques</div>
+          <div class="example-item">Bilan final : revue des 3 à 5 automatisations livrées et testées</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== PLANNING 3 JOURS ===== -->
+<section id="planning">
+  <div class="section-inner">
+    <div class="section-eyebrow">Planning</div>
+    <h2 class="section-title">3 jours pour tout changer</h2>
+    <div class="days-grid">
+      <div class="card day-card">
+        <div class="day-header">
+          <div class="day-label">JOUR 1</div>
+          <div class="day-title">Audit stratégique & fondations</div>
+        </div>
+        <div class="day-body">
+          <div class="session">
+            <div class="session-time">☀️ Matin · Module 1</div>
+            <div class="session-title">Diagnostic & Cartographie du temps</div>
+            <div class="session-desc">État de l'art de l'IA et de l'automation. Méthodologie d'audit opérationnel. Calcul du ROI. Livrable : votre cartographie personnalisée.</div>
+          </div>
+          <div class="session">
+            <div class="session-time">🌙 Après-midi · Module 2</div>
+            <div class="session-title">Quick Wins avec n8n</div>
+            <div class="session-desc">Introduction à n8n : interface, nœuds, triggers. Automatisation de la communication. Nettoyage et enrichissement de fichiers clients.</div>
+          </div>
+        </div>
+      </div>
+      <div class="card day-card">
+        <div class="day-header">
+          <div class="day-label">JOUR 2</div>
+          <div class="day-title">Intelligence artificielle & agents</div>
+        </div>
+        <div class="day-body">
+          <div class="session">
+            <div class="session-time">☀️ Matin · Module 3</div>
+            <div class="session-title">Création d'agents IA personnalisés</div>
+            <div class="session-desc">Ingénierie de prompt expert. IA conversationnelle et RAG sur vos propres documents. Agents autonomes capables d'exécuter des actions réelles.</div>
+          </div>
+          <div class="session">
+            <div class="session-time">🌙 Après-midi · Module 4</div>
+            <div class="session-title">Système d'acquisition automatisé</div>
+            <div class="session-desc">Workflow prospect : scraping, qualification IA, scoring et distribution multi-canal. Atelier pratique : build complet de votre tunnel.</div>
+          </div>
+        </div>
+      </div>
+      <div class="card day-card">
+        <div class="day-header">
+          <div class="day-label">JOUR 3</div>
+          <div class="day-title">Systèmes complexes & autonomie</div>
+        </div>
+        <div class="day-body">
+          <div class="session">
+            <div class="session-time">☀️ Matin · Module 5</div>
+            <div class="session-title">Architecture business globale</div>
+            <div class="session-desc">Automatisation administrative : facturation, suivi de paiements. Interconnexion des pôles marketing, vente et administration.</div>
+          </div>
+          <div class="session">
+            <div class="session-time">🌙 Après-midi · Module 6</div>
+            <div class="session-title">Scalabilité & maintenance</div>
+            <div class="session-desc">Passage à l'échelle. Sécurité et RGPD. Bilan final : revue des automatisations livrées. Remise du kit d'autonomie.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== LIVRABLES ===== -->
+<section id="livrables" style="background: var(--bg-white);">
+  <div class="section-inner">
+    <div class="section-eyebrow">À la fin des 3 jours</div>
+    <h2 class="section-title">Votre espace de travail scalable</h2>
+    <p class="section-subtitle">Chaque stagiaire repart avec un kit complet, opérationnel et documenté, prêt à être exploité dès le lendemain.</p>
+    <div class="livrables-grid">
+      <div class="card livrable-card">
+        <div class="livrable-num">01</div>
+        <div class="livrable-title">La Cartographie</div>
+        <div class="livrable-sub">Plan d'action 6 mois</div>
+        <div class="livrable-desc">Un plan d'action stratégique personnalisé couvrant les 6 prochains mois de votre transformation digitale.</div>
+      </div>
+      <div class="card livrable-card">
+        <div class="livrable-num">02</div>
+        <div class="livrable-title">L'Infrastructure</div>
+        <div class="livrable-sub">Instance n8n configurée</div>
+        <div class="livrable-desc">Votre propre instance n8n déployée, sécurisée et prête à accueillir l'ensemble de vos workflows métiers.</div>
+      </div>
+      <div class="card livrable-card">
+        <div class="livrable-num">03</div>
+        <div class="livrable-title">Le Catalogue</div>
+        <div class="livrable-sub">3 à 5 workflows prêts</div>
+        <div class="livrable-desc">Automatisations livrées et testées : relance devis, qualification lead, récapitulatif IA, reporting automatique.</div>
+      </div>
+      <div class="card livrable-card">
+        <div class="livrable-num">04</div>
+        <div class="livrable-title">Le Kit de survie</div>
+        <div class="livrable-sub">Autonomie totale</div>
+        <div class="livrable-desc">Méthodologie de debugging, templates d'agents IA et bibliothèque de prompts réutilisables pour rester autonome.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== PROGRAMME DÉTAILLÉ TABLE ===== -->
+<section id="programme-detail">
+  <div class="section-inner">
+    <div class="section-eyebrow">Contenu détaillé</div>
+    <h2 class="section-title">Programme pédagogique</h2>
+    <div class="prog-table">
+      <table>
+        <thead><tr><th>Programme</th><th>Séance</th><th>Durée</th><th>Tarif</th></tr></thead>
+        <tbody>
+          <tr class="mod-row"><td colspan="4">MODULE 1 · Comprendre les enjeux de l'IA et de l'automatisation</td></tr>
+          <tr><td>L'état de l'art de l'IA et de l'Automation</td><td class="seance">J-1 AM</td><td class="duree">2h00</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Audit opérationnel</td><td class="seance">J-1 AM</td><td class="duree">1h00</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Calcul du ROI</td><td class="seance">J-1 AM</td><td class="duree">0h30</td><td class="tarif">Inclus</td></tr>
+          <tr class="mod-row"><td colspan="4">MODULE 2 · Identifier les tâches automatisables</td></tr>
+          <tr><td>Introduction à n8n</td><td class="seance">J-1 PM</td><td class="duree">2h00</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Automatisation de la communication</td><td class="seance">J-1 PM</td><td class="duree">1h00</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Traitement de données</td><td class="seance">J-1 PM</td><td class="duree">1h00</td><td class="tarif">Inclus</td></tr>
+          <tr class="mod-row"><td colspan="4">MODULE 3 · Mise en place d'automatisations IA</td></tr>
+          <tr><td>Ingénierie de Prompt (Expert)</td><td class="seance">J-2 AM</td><td class="duree">1h00</td><td class="tarif">Inclus</td></tr>
+          <tr><td>IA Conversationnelle</td><td class="seance">J-2 AM</td><td class="duree">1h30</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Agents Autonomes</td><td class="seance">J-2 AM</td><td class="duree">1h30</td><td class="tarif">Inclus</td></tr>
+          <tr class="mod-row"><td colspan="4">MODULE 4 · Système d'Acquisition Automatisé</td></tr>
+          <tr><td>Le Workflow Prospect</td><td class="seance">J-2 PM</td><td class="duree">1h00</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Gestion des Leads</td><td class="seance">J-2 PM</td><td class="duree">1h30</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Atelier : Build tunnel d'acquisition</td><td class="seance">J-2 PM</td><td class="duree">1h30</td><td class="tarif">Inclus</td></tr>
+          <tr class="mod-row"><td colspan="4">MODULE 5 · Architecture Business Globale</td></tr>
+          <tr><td>Automatisation Administrative</td><td class="seance">J-3 AM</td><td class="duree">1h30</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Interconnexion des pôles</td><td class="seance">J-3 AM</td><td class="duree">1h00</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Gestion des erreurs</td><td class="seance">J-3 AM</td><td class="duree">1h30</td><td class="tarif">Inclus</td></tr>
+          <tr class="mod-row"><td colspan="4">MODULE 6 · Scalabilité et Maintenance</td></tr>
+          <tr><td>Passage à l'échelle</td><td class="seance">J-3 PM</td><td class="duree">2h00</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Sécurité et Éthique</td><td class="seance">J-3 PM</td><td class="duree">1h00</td><td class="tarif">Inclus</td></tr>
+          <tr><td>Bilan final</td><td class="seance">J-3 PM</td><td class="duree">1h00</td><td class="tarif">Inclus</td></tr>
+          <tr class="total"><td>TOTAL DE LA FORMATION</td><td>3 JOURS</td><td>24H00</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== TARIFS ===== -->
+<section id="tarifs">
+  <div class="section-inner">
+    <div class="section-eyebrow">Tarifs</div>
+    <h2 class="section-title">Coût de la formation</h2>
+    <div class="tarif-grid">
+      <div class="tarif-main">
+        <div class="tarif-eyebrow">Convention de formation</div>
+        <h3>Automatisez votre Entreprise</h3>
+        <div class="tarif-sub">IA & Automatisation Business · Performance & Scalabilité</div>
+        <div class="tarif-price">
+          <div class="amount">2 000</div>
+          <div class="currency">€</div>
+          <div class="per">HT / stagiaire</div>
+        </div>
+        <div class="tarif-breakdown">
+          <div class="tarif-line"><span class="label">Total Net HT</span><span class="value">2 000,00 €</span></div>
+          <div class="tarif-line"><span class="label">TVA 20%</span><span class="value">400,00 €</span></div>
+          <div class="tarif-total"><span>Montant total TTC</span><span>2 400,00 €</span></div>
+        </div>
+      </div>
+      <div class="tarif-details">
+        <div class="section-eyebrow" style="margin-bottom: 16px;">Détails</div>
+        <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 20px; color: var(--text-primary);">Ce qui est inclus</h3>
+        <div class="detail-item"><div class="detail-key">Durée</div><div class="detail-val">3 jours, 24 heures</div></div>
+        <div class="detail-item"><div class="detail-key">Format</div><div class="detail-val">Inter & Intra entreprise</div></div>
+        <div class="detail-item"><div class="detail-key">Modalité</div><div class="detail-val">Présentiel ou distanciel</div></div>
+        <div class="detail-item"><div class="detail-key">Lieu</div><div class="detail-val">Paris 17ᵉ ou dans vos locaux</div></div>
+        <div class="detail-item"><div class="detail-key">Coût horaire</div><div class="detail-val">83,33 € / heure</div></div>
+        <div class="detail-item"><div class="detail-key">Support</div><div class="detail-val">Livret digital + templates</div></div>
+        <div class="detail-item"><div class="detail-key">Suivi</div><div class="detail-val">Évaluation continue QCM</div></div>
+        <div class="detail-item"><div class="detail-key">Attestation</div><div class="detail-val">Certificat de formation</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== PUBLIC VISÉ ===== -->
+<section id="public">
+  <div class="section-inner">
+    <div class="section-eyebrow">Accès à la formation</div>
+    <h2 class="section-title">Prérequis & public visé</h2>
+    <div class="public-grid">
+      <div class="public-list">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">À qui s'adresse cette formation ?</h3>
+        <div class="pub-item">
+          <div class="pub-check">✓</div>
+          <div><div class="pub-title">Dirigeants & entrepreneurs</div><div class="pub-desc">Souhaitant scaler leur entreprise grâce à l'IA et à l'automatisation.</div></div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-check">✓</div>
+          <div><div class="pub-title">Managers & responsables</div><div class="pub-desc">Opérationnels en quête de productivité et de systèmes scalables.</div></div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-check">✓</div>
+          <div><div class="pub-title">Professionnels du marketing</div><div class="pub-desc">Désireux de renforcer leurs compétences digitales avec l'IA.</div></div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-check">✓</div>
+          <div><div class="pub-title">Consultants indépendants</div><div class="pub-desc">Souhaitant élargir leur offre avec l'automatisation business.</div></div>
+        </div>
+      </div>
+      <div class="prereq-blocks">
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">Ce qu'il vous faut</h3>
+        <div class="prereq-block">
+          <div class="prereq-cat">Technique</div>
+          <div class="prereq-txt">Maîtrise des outils bureautiques (Excel, Word). Notions de base en informatique et technologies numériques. Accès à n8n et ChatGPT / Claude.</div>
+        </div>
+        <div class="prereq-block">
+          <div class="prereq-cat">Profil</div>
+          <div class="prereq-txt">Sens de la communication, autonomie, organisation. Esprit d'équipe et d'analyse. Appétence pour les nouvelles technologies.</div>
+        </div>
+        <div class="prereq-block">
+          <div class="prereq-cat">Posture</div>
+          <div class="prereq-txt">Curiosité et envie d'apprendre. Adaptabilité face à un environnement qui évolue rapidement. Capacité à être proactif pendant les ateliers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== MODALITES ===== -->
+<section id="modalites" style="background: var(--bg-white);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Pédagogie</div>
+    <h2 class="section-title">Modalités & évaluation</h2>
+    <div class="moda-grid">
+      <div class="card moda-card">
+        <div class="moda-icon">📚</div>
+        <div class="moda-title">Moyens pédagogiques</div>
+        <div class="moda-desc">Aides audiovisuelles, supports de cours, exercices pratiques corrigés, études de cas réels. Accès à la plateforme Ï-Learn.</div>
+      </div>
+      <div class="card moda-card">
+        <div class="moda-icon">🛠️</div>
+        <div class="moda-title">Moyens techniques</div>
+        <div class="moda-desc">Vidéo-projecteur, tableau blanc, multimédia, templates n8n, bibliothèque de prompts, environnement de test dédié.</div>
+      </div>
+      <div class="card moda-card">
+        <div class="moda-icon">📊</div>
+        <div class="moda-title">Évaluation</div>
+        <div class="moda-desc">QCM, mises en situation, travaux pratiques. Test de positionnement en amont et en aval pour valider les compétences.</div>
+      </div>
+      <div class="card moda-card">
+        <div class="moda-icon">🎓</div>
+        <div class="moda-title">Certification</div>
+        <div class="moda-desc">Attestation de formation délivrée en fin de session. Feuille d'émargement signée. Organisme certifié Qualiopi.</div>
+      </div>
+    </div>
+    <div class="handicap-note">
+      ♿ Formation accessible aux personnes en situation de handicap · Contactez notre référent pour adapter le parcours à vos besoins.
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== FORMATEUR ===== -->
+<section id="formateur">
+  <div class="section-inner">
+    <div class="section-eyebrow">Votre formateur</div>
+    <h2 class="section-title">Expertise terrain & passion transmise</h2>
+    <div class="formateur-grid">
+      <div class="formateur-portrait">
+        <img src="photo-tahar.png" alt="Tahar RAIFAK" class="formateur-photo" loading="lazy">
+        <div class="f-eyebrow">Formateur référent</div>
+        <div class="f-name">Tahar RAIFAK</div>
+        <div class="f-role">CEO · TR7 Agency Studio</div>
+        <div class="f-quote">« Un bon formateur ne transmet pas des concepts, il installe des systèmes qui tournent le lendemain matin chez ses stagiaires. »</div>
+        <div style="margin-top: 20px; font-size: 10px; letter-spacing: 0.12em; color: var(--cyan); font-weight: 700;">RÉFÉRENT PÉDAGOGIQUE · HANDICAP · ADMINISTRATIF</div>
+      </div>
+      <div class="formateur-right">
+        <div class="section-eyebrow" style="margin-bottom: 16px;">Domaines d'expertise</div>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 24px; color: var(--text-primary);">Un praticien qui enseigne ce qu'il construit chaque jour</h3>
+        <div class="skill-row"><div class="skill-key">IA & LLMs</div><div class="skill-val">Prompt engineering avancé, RAG, agents autonomes Claude & OpenAI.</div></div>
+        <div class="skill-row"><div class="skill-key">No-Code / Low-Code</div><div class="skill-val">Architecture n8n, Make, workflows métiers complexes en production.</div></div>
+        <div class="skill-row"><div class="skill-key">Data & CRM</div><div class="skill-val">Airtable, Supabase, Google Sheets, pipelines ETL automatisés.</div></div>
+        <div class="skill-row"><div class="skill-key">Business Scaling</div><div class="skill-val">Tunnels d'acquisition, systèmes scalables, transformation digitale.</div></div>
+        <div style="margin-top: 28px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px;">Stack technique maîtrisée</div>
+        <div class="stack-chips">
+          <div class="chip">n8n</div><div class="chip">Claude API</div><div class="chip">OpenAI</div>
+          <div class="chip">Airtable</div><div class="chip">Supabase</div><div class="chip">Make</div>
+          <div class="chip">Next.js</div><div class="chip">Shopify</div><div class="chip">Stripe</div>
+          <div class="chip">Telegram</div><div class="chip">Brevo</div><div class="chip">Google Workspace</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== REFERENCES ===== -->
+<section id="references" style="background: var(--bg-white);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Références & preuves</div>
+    <h2 class="section-title">Ils nous font confiance</h2>
+    <p class="section-subtitle">TR7 Agency Studio intervient auprès de PME, startups et indépendants exigeants. L'expertise mobilisée en formation est celle déployée chaque jour en production.</p>
+    <div class="ref-stats">
+      <div class="ref-stat"><div class="ref-num">20+</div><div class="ref-lbl">Workflows en production</div></div>
+      <div class="ref-stat"><div class="ref-num">50k+</div><div class="ref-lbl">Tâches automatisées / mois</div></div>
+      <div class="ref-stat"><div class="ref-num">15+</div><div class="ref-lbl">Agents IA déployés</div></div>
+      <div class="ref-stat"><div class="ref-num">100%</div><div class="ref-lbl">Qualiopi · RGPD</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-sep">
+
+<!-- ===== FINANCEMENT ===== -->
+<section id="financement">
+  <div class="section-inner">
+    <div class="section-eyebrow">Financement & inscription</div>
+    <h2 class="section-title">Passez à l'action dès demain</h2>
+    <div class="finance-grid">
+      <div>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">Plusieurs dispositifs de financement</h3>
+        <div class="funding-item">
+          <div class="funding-name">🏛️ OPCO (Plan de développement)</div>
+          <div class="funding-desc">Financement par votre opérateur de compétences (OPCO Atlas, OPCO EP, etc.) dans le cadre du plan de développement de compétences de l'entreprise.</div>
+        </div>
+        <div class="funding-item">
+          <div class="funding-name">🏢 Financement entreprise</div>
+          <div class="funding-desc">Prise en charge directe par l'employeur, intégrable dans le budget formation annuel et déductible fiscalement.</div>
+        </div>
+        <div class="funding-item">
+          <div class="funding-name">💳 Autofinancement</div>
+          <div class="funding-desc">Paiement échelonné possible : acompte à l'inscription + solde en 2 ou 3 fois sans frais sur demande.</div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: var(--text-primary);">4 étapes pour démarrer</h3>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div><div class="step-title">Prise de contact</div><div class="step-desc">Échange téléphonique ou email pour qualifier votre besoin et votre contexte d'entreprise.</div></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div><div class="step-title">Diagnostic & devis</div><div class="step-desc">Entretien de positionnement (30 min), envoi de la convention de formation et du devis personnalisé sous 48h.</div></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div><div class="step-title">Montage du financement</div><div class="step-desc">Notre équipe vous accompagne sur le dossier OPCO ou tout autre dispositif de prise en charge.</div></div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div><div class="step-title">Démarrage de la session</div><div class="step-desc">Convocation, accès plateforme Ï-Learn, livret pédagogique. Début sous 2 à 4 semaines.</div></div>
+          </div>
+        </div>
+        <div style="margin-top: 20px; padding: 20px; background: var(--gradient-soft); border-radius: var(--radius-xs); border-left: 3px solid var(--violet);">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--violet); text-transform: uppercase;">📞 Réservez votre appel de diagnostic</div>
+          <div style="font-size: 15px; font-weight: 700; color: var(--text-primary); margin-top: 6px;">30 minutes pour cadrer votre projet</div>
+          <button onclick="openIClosed()" style="display: inline-block; margin-top: 12px; color: var(--blue); font-weight: 600; font-size: 13px; text-decoration: none; cursor: pointer; background: none; border: none; padding: 0; font-family: inherit;">
+            Prendre rendez-vous →
+          </button>
+        </div>
+        <div style="margin-top: 16px; font-size: 11px; color: var(--text-muted); font-style: italic;">
+          Délai d'accès · 2 à 4 semaines après validation du dossier
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-section" id="contact-section">
+  <div class="section-inner">
+    <div class="cta-eyebrow">Prêt à automatiser</div>
+    <h2>Passez à l'action.<br><span>Scalez votre entreprise.</span></h2>
+    <p class="cta-desc">Pour toute demande d'information, de devis ou d'inscription, notre équipe pédagogique vous répond sous 48h ouvrées.</p>
+    <div class="cta-actions">
+      <button onclick="openContactForm()" class="btn-secondary" style="color: white; border-color: rgba(255,255,255,0.3);">
+        ✉️ Contactez-nous
+      </button>
+      <button onclick="openIClosed()" class="btn-primary">
+        📞 Réservez un appel stratégique →
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== iClosed Modal ===== -->
+<div class="iclosed-overlay" id="iclosedOverlay" onclick="if(event.target===this)closeIClosed()">
+  <div class="iclosed-modal">
+    <div class="iclosed-modal-header">
+      <h3>📞 Réservez votre appel stratégique</h3>
+      <button class="iclosed-close" onclick="closeIClosed()" aria-label="Fermer">✕</button>
+    </div>
+    <iframe src="" id="iclosedFrame" loading="lazy" title="Calendrier de réservation"></iframe>
+  </div>
+</div>
+
+<!-- ===== Contact Form Modal ===== -->
+<div class="contact-form-overlay" id="contactOverlay" onclick="if(event.target===this)closeContactForm()">
+  <div class="contact-form-modal">
+    <button class="iclosed-close" onclick="closeContactForm()" style="position:absolute;top:16px;right:16px;" aria-label="Fermer">✕</button>
+    <h3>✉️ Contactez-nous</h3>
+    <form onsubmit="submitContactForm(event)">
+      <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="Décrivez votre projet ou votre besoin..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Envoyer →</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== CONTACT INFO ===== -->
+<section class="contact-section">
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-label">Ï-NAYA Formation</div>
+      <div class="contact-name">Tahar RAIFAK</div>
+      <div class="contact-role">Référent pédagogique, administratif & handicap</div>
+      <div class="contact-info">
+        <div class="contact-line"><span class="ic">✉</span><span>infos@tr7agencystudio.com</span></div>
+        <div class="contact-line"><span class="ic">☎</span><span>07 88 39 11 64 · 01 83 87 37 55</span></div>
+        <div class="contact-line"><span class="ic">📍</span><span>8, rue des Colonels Renard, 75017 Paris</span></div>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-label">TR7 Agency Studio</div>
+      <div class="contact-name">Partenaire technologique</div>
+      <div class="contact-role">Architecture, automatisation & déploiement</div>
+      <div class="contact-info">
+        <div class="contact-line"><span class="ic">🌐</span><span>tr7agencystudio.com</span></div>
+        <div class="contact-line"><span class="ic">✉</span><span>infos@tr7agencystudio.com</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logos">
+    <img src="logo-inaya.png" alt="Ï-Naya Formation" class="footer-logo-img" loading="lazy">
+    <img src="logo-tr7.png" alt="TR7 Agency Studio" class="footer-logo-img tr7" loading="lazy">
+    <img src="logo-qualiopi.png" alt="Qualiopi - Processus certifié" class="footer-qualiopi" loading="lazy">
+  </div>
+  <div class="copyright">© 2026 Ï-NAYA Formation × TR7 Agency Studio · Organisme de formation certifié Qualiopi · NDA en cours</div>
+</footer>
+
+<script>
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('navLinks').classList.remove('open');
+    }
+  });
+});
+
+// ===== MODULE ACCORDION =====
+function toggleModule(el) {
+  var wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.module-row.open').forEach(function(row) {
+    row.classList.remove('open');
+  });
+  if (!wasOpen) el.classList.add('open');
+}
+
+// ===== STATIC STAR FIELD + PARALLAX =====
+(function createStars() {
+  var container = document.getElementById('starField');
+  if (!container) return;
+  var types = ['blue', 'violet', 'cyan', 'white'];
+  var stars = [];
+  for (var i = 0; i < 80; i++) {
+    var s = document.createElement('div');
+    s.className = 'star ' + types[Math.floor(Math.random() * types.length)];
+    var size = 1.5 + Math.random() * 4;
+    s.style.cssText = [
+      'width:' + size + 'px',
+      'height:' + size + 'px',
+      'left:' + (Math.random() * 100) + '%',
+      'top:' + (Math.random() * 100) + '%',
+      'opacity:' + (0.3 + Math.random() * 0.6)
+    ].join(';');
+    s.dataset.depth = (0.2 + Math.random() * 0.8).toFixed(2);
+    container.appendChild(s);
+    stars.push(s);
+  }
+  var hero = document.querySelector('.hero');
+  hero.addEventListener('mousemove', function(e) {
+    var rect = hero.getBoundingClientRect();
+    var mx = (e.clientX - rect.left) / rect.width - 0.5;
+    var my = (e.clientY - rect.top) / rect.height - 0.5;
+    stars.forEach(function(s) {
+      var d = parseFloat(s.dataset.depth);
+      s.style.transform = 'translate(' + (mx * d * 30) + 'px,' + (my * d * 30) + 'px)';
+    });
+  });
+  hero.addEventListener('mouseleave', function() {
+    stars.forEach(function(s) { s.style.transform = 'translate(0,0)'; });
+  });
+})();
+
+// ===== iClosed MODAL =====
+function openIClosed() {
+  var frame = document.getElementById('iclosedFrame');
+  if (!frame.src || frame.src === window.location.href) {
+    frame.src = 'https://app.iclosed.io/e/TR7AgencyStudio/tr7-agency-studio';
+  }
+  document.getElementById('iclosedOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeIClosed() {
+  document.getElementById('iclosedOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ===== CONTACT FORM MODAL =====
+function openContactForm() {
+  document.getElementById('contactOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeContactForm() {
+  document.getElementById('contactOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+function submitContactForm(e) {
+  e.preventDefault();
+  var form = e.target;
+  var prenom = form.prenom.value;
+  var nom = form.nom.value;
+  var email = form.email.value;
+  var message = form.message.value;
+  var subject = encodeURIComponent('Contact Formation - ' + prenom + ' ' + nom);
+  var body = encodeURIComponent('Prénom: ' + prenom + '\nNom: ' + nom + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+  window.location.href = 'mailto:infos@tr7agencystudio.com?subject=' + subject + '&body=' + body;
+  closeContactForm();
+}
+
+// ===== ESCAPE KEY =====
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closeIClosed(); closeContactForm(); }
+});
+
+// ===== INTERSECTION OBSERVER (fade-in) =====
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card, .module-row, .module-detail, .obj-card-dark, .ref-stat, .step-item, .pub-item, .funding-item').forEach(function(el, i) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.6s ease ' + (i % 5 * 0.1) + 's, transform 0.6s ease ' + (i % 5 * 0.1) + 's';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
