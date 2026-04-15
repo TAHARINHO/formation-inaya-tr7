@@ -936,37 +936,120 @@ footer .copyright {
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
+  /* --- NAV --- */
+  .nav { padding: 0 16px; }
+  .nav-inner { height: 64px; }
+  .nav-brand { gap: 8px; }
+  .nav-brand .logo-inaya-img { height: 36px; }
+  .nav-brand .logo-tr7-img  { height: 36px; }
+  .brand-sep { font-size: 12px; }
   .nav-links { display: none; }
+  .nav-cta { display: none; }
   .hamburger { display: block; }
   .nav-links.open {
     display: flex; flex-direction: column;
     position: absolute; top: 64px; left: 0; right: 0;
-    background: var(--bg-white); padding: 24px; gap: 16px;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(20px);
+    padding: 20px 24px; gap: 12px;
     box-shadow: var(--shadow-md); border-top: 1px solid var(--border);
     z-index: 99;
   }
-  .hero-stats { gap: 24px; }
-  .hero-stat .num { font-size: 36px; }
+  .nav-links.open a {
+    text-align: center; padding: 12px 20px; font-size: 13px;
+  }
+  /* Bouton réserver visible dans le menu mobile */
+  .nav-links.open::after {
+    content: 'Réserver votre appel →';
+    display: block; text-align: center;
+    background: var(--gradient); color: white;
+    padding: 14px 20px; border-radius: 50px;
+    font-size: 13px; font-weight: 800; letter-spacing: 0.04em;
+    margin-top: 8px; cursor: pointer;
+  }
+
+  /* --- HERO --- */
+  .hero { padding: 90px 16px 50px; }
+  .hero-inner { padding: 36px 20px; border-radius: 18px; }
+  .hero h1 { font-size: clamp(28px, 8vw, 44px); }
+  .hero .subtitle { font-size: 15px; }
+  .hero-stats { gap: 20px; }
+  .hero-stat .num { font-size: 32px; }
+  .hero-stat .lbl { font-size: 10px; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary { justify-content: center; padding: 14px 24px; font-size: 14px; }
+
+  /* --- SECTIONS --- */
+  section { padding: 60px 16px; }
+  .section-title { font-size: clamp(22px, 6vw, 32px); }
+
+  /* --- GRIDS → 1 colonne --- */
   #objectifs .obj-grid,
   #tarifs .tarif-grid,
   #public .public-grid,
   #financement .finance-grid,
   .contact-grid { grid-template-columns: 1fr; }
+
+  /* --- FORMATEUR --- */
   #formateur .formateur-grid { grid-template-columns: 1fr; }
+
+  /* --- MODULES --- */
   .mod-body { grid-template-columns: 1fr; }
-  .mod-header { flex-direction: column; text-align: center; }
+  .mod-header { flex-direction: column; text-align: center; gap: 12px; }
   .mod-header .bignum { font-size: 48px; }
-  #references .ref-stats { grid-template-columns: repeat(2, 1fr); }
-  .hero-actions { flex-direction: column; align-items: center; }
-  .iclosed-modal iframe { height: 500px; }
+  .mod-header .mod-duree { align-self: center; }
   .module-expand-inner { grid-template-columns: 1fr; }
-  .hero-inner { padding: 40px 24px; }
+
+  /* --- PLANNING --- */
+  #planning .days-grid { grid-template-columns: 1fr; }
+  .day-card:hover { transform: translateY(-6px) scale(1.02); }
+
+  /* --- LIVRABLES & MODALITÉS --- */
+  #livrables .livrables-grid { grid-template-columns: 1fr 1fr; }
+  #modalites .moda-grid { grid-template-columns: 1fr 1fr; }
+  .livrable-card:hover,
+  .moda-card:hover { transform: translateY(-6px) scale(1.01); }
+
+  /* --- RÉFÉRENCES --- */
+  #references .ref-stats { grid-template-columns: repeat(2, 1fr); }
+
+  /* --- CTA --- */
+  .cta-card { padding: 36px 20px; }
+  .cta-section h2 { font-size: clamp(24px, 7vw, 36px); }
+  .cta-bullets { gap: 16px; }
+  .cta-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+  .cta-actions button { justify-content: center; }
+
+  /* --- MODALS --- */
+  .iclosed-modal iframe { height: 500px; }
+  .iclosed-modal { border-radius: 16px; }
+  .contact-form-modal { padding: 28px 20px; border-radius: 16px; }
+
+  /* --- FOOTER --- */
+  .footer-logos { gap: 24px; }
+  .footer-logo-img { height: 44px; }
+  .footer-logo-img.tr7 { height: 44px; }
+  .footer-qualiopi { height: 40px; }
+  .footer-legal { font-size: 10px; letter-spacing: 0.08em; }
 }
+
 @media (max-width: 480px) {
-  section { padding: 60px 16px; }
-  .card { padding: 24px 20px; }
-  .hero { padding: 80px 16px 40px; }
-  .nav-cta { padding: 10px 16px; font-size: 12px; }
+  .card { padding: 20px 16px; }
+  #livrables .livrables-grid { grid-template-columns: 1fr; }
+  #modalites .moda-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); display: grid; gap: 16px; }
+  .tarif-main { padding: 24px 20px; }
+  .prog-table { font-size: 12px; }
+  .prog-table thead th { padding: 10px 12px; }
+  .prog-table tbody td { padding: 8px 12px; }
+  .stack-chips { gap: 6px; }
+  .chip { padding: 5px 10px; font-size: 11px; }
+  .cta-card { padding: 28px 16px; }
+  .footer-logos { gap: 16px; }
+  .footer-logo-img,
+  .footer-logo-img.tr7 { height: 36px; }
+  .footer-qualiopi { height: 32px; }
 }
 </style>
 </head>
