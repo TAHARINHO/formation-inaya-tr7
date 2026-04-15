@@ -69,10 +69,10 @@ body {
 }
 .nav-brand .logo-inaya-img:hover { filter: drop-shadow(0 0 10px rgba(234,179,8,0.4)); }
 .nav-brand .logo-tr7-img {
-  height: 28px;
+  height: 50px;
   width: auto;
   object-fit: contain;
-  opacity: 0.85;
+  opacity: 0.9;
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 .nav-brand .logo-tr7-img:hover { opacity: 1; filter: drop-shadow(0 0 8px rgba(67,97,238,0.4)); }
@@ -132,91 +132,69 @@ body {
   opacity: 0.5;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO — Dark TR7 style ===== */
 .hero {
   min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  padding: 100px 24px 60px; position: relative; overflow: hidden;
+  padding: 110px 24px 70px; position: relative; overflow: hidden;
+  /* Dark background TR7 style */
+  background: #06060f;
+  background-image:
+    radial-gradient(ellipse 90% 60% at 50% -5%, rgba(67,97,238,0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(124,58,237,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(0,212,255,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(67,97,238,0.1) 0%, transparent 60%);
 }
+/* Subtle grid overlay */
 .hero::before {
-  content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(67,97,238,0.12), transparent 70%);
-  top: -150px; right: -100px; pointer-events: none;
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(67,97,238,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(67,97,238,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
+/* Beam de lumière central */
 .hero::after {
-  content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(124,58,237,0.08), transparent 70%);
-  bottom: -100px; left: -100px; pointer-events: none;
+  content: ''; position: absolute; pointer-events: none; z-index: 0;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 300px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(67,97,238,0.22), transparent 70%);
 }
 .hero-inner {
-  max-width: 900px; text-align: center; position: relative; z-index: 1;
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-  border-radius: 28px; padding: 64px 52px;
-  transform-style: preserve-3d;
-  transform: perspective(1200px) rotateX(0deg) rotateY(0deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  /* Animated gradient border */
-  border: 2px solid transparent;
-  background-clip: padding-box;
+  max-width: 860px; text-align: center; position: relative; z-index: 1;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px; padding: 60px 52px;
   box-shadow:
-    0 0 0 2px transparent,
-    0 0 80px rgba(67,97,238,0.12),
-    0 0 160px rgba(124,58,237,0.08),
-    inset 0 0 80px rgba(255,255,255,0.6);
+    0 0 0 1px rgba(67,97,238,0.2),
+    0 20px 80px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.1);
 }
+/* Ligne de dégradé subtile en haut */
 .hero-inner::before {
-  content: ''; position: absolute; inset: -2px; border-radius: 30px;
-  background: linear-gradient(135deg, rgba(67,97,238,0.6), rgba(124,58,237,0.5), rgba(0,212,255,0.6), rgba(67,97,238,0.6));
-  background-size: 300% 300%;
-  animation: gradientBorder 4s ease infinite;
-  z-index: -1;
+  content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(67,97,238,0.6), rgba(0,212,255,0.5), rgba(124,58,237,0.6), transparent);
+  border-radius: 1px;
 }
-.hero-inner::after {
-  content: ''; position: absolute; inset: 2px; border-radius: 26px;
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(24px);
-  z-index: -1;
-}
-@keyframes gradientBorder {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-/* Shimmer sweep */
-.hero-inner .shimmer {
-  position: absolute; inset: 0; border-radius: 28px; overflow: hidden; z-index: 0; pointer-events: none;
-}
-.hero-inner .shimmer::after {
-  content: ''; position: absolute;
-  top: -50%; left: -75%; width: 50%; height: 200%;
-  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.35) 50%, transparent 60%);
-  animation: shimmerSweep 3.5s ease-in-out infinite;
-}
-@keyframes shimmerSweep {
-  0% { transform: translateX(-100%); }
-  60%, 100% { transform: translateX(400%); }
-}
-.hero-stars {
-  position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
-}
-/* Stars handled by canvas */
-#starCanvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.hero-stars { display: none; }
+#starCanvas { display: none; }
 
 .hero-eyebrow {
   display: inline-block; padding: 6px 16px; border-radius: 50px;
-  background: var(--gradient-soft); border: 1px solid rgba(67,97,238,0.15);
+  background: rgba(67,97,238,0.15); border: 1px solid rgba(67,97,238,0.35);
   font-size: 12px; font-weight: 700; letter-spacing: 0.15em;
-  color: var(--violet); text-transform: uppercase; margin-bottom: 24px;
+  color: var(--cyan); text-transform: uppercase; margin-bottom: 24px;
 }
 .hero h1 {
   font-size: clamp(36px, 6vw, 72px); font-weight: 900; line-height: 1.05;
-  letter-spacing: -0.03em; color: var(--text-primary);
+  letter-spacing: -0.03em; color: #ffffff;
 }
 .hero h1 span {
   background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .hero .subtitle {
-  font-size: clamp(16px, 2vw, 20px); color: var(--text-secondary);
+  font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.6);
   margin-top: 20px; font-style: italic; max-width: 700px; margin-left: auto; margin-right: auto;
 }
 .hero-stats {
@@ -229,7 +207,7 @@ body {
 }
 .hero-stat .lbl {
   font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
-  color: var(--text-muted); margin-top: 6px; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); margin-top: 6px; text-transform: uppercase;
 }
 .hero-actions { display: flex; gap: 16px; justify-content: center; margin-top: 48px; flex-wrap: wrap; }
 .btn-primary {
@@ -243,13 +221,13 @@ body {
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(67,97,238,0.35); }
 .btn-secondary {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--bg-white); color: var(--text-primary);
+  background: rgba(255,255,255,0.08); color: white;
   padding: 16px 32px; border-radius: 50px; font-size: 15px; font-weight: 700;
-  text-decoration: none; border: 1px solid var(--border); cursor: pointer;
+  text-decoration: none; border: 1px solid rgba(255,255,255,0.2); cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
-.btn-secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: rgba(255,255,255,0.14); }
 
 /* ===== SECTIONS COMMON ===== */
 section { padding: 80px 24px; }
@@ -855,7 +833,7 @@ footer {
   margin-bottom: 28px; flex-wrap: wrap;
 }
 .footer-logo-img { height: 58px; width: auto; object-fit: contain; filter: brightness(1.1); }
-.footer-logo-img.tr7 { height: 38px; filter: brightness(1.2) drop-shadow(0 0 8px rgba(67,97,238,0.3)); }
+.footer-logo-img.tr7 { height: 58px; filter: brightness(1.2) drop-shadow(0 0 10px rgba(67,97,238,0.35)); }
 .footer-qualiopi {
   height: 52px; background: white; border-radius: 8px; padding: 6px 10px;
   object-fit: contain;
@@ -928,38 +906,15 @@ footer .copyright {
 }
 .moda-desc { font-size: 13px; color: var(--text-secondary); margin-top: 10px; line-height: 1.55; position: relative; z-index: 1; }
 
-/* ===== HANDICAP NOTE — Accentué ===== */
+/* ===== HANDICAP NOTE — Accentué, sans effet 3D/halo ===== */
 .handicap-note {
   margin-top: 32px; padding: 24px 32px; border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(0,212,255,0.06));
-  border: 2px solid rgba(124,58,237,0.25);
-  font-size: 15px; font-weight: 700; color: var(--text-primary); text-align: center;
-  position: relative; overflow: hidden; cursor: default;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
-  transform-style: preserve-3d;
+  background: linear-gradient(135deg, rgba(124,58,237,0.07), rgba(0,212,255,0.05));
+  border: 1.5px solid rgba(124,58,237,0.22);
+  font-size: 15px; font-weight: 600; color: var(--text-primary); text-align: center;
 }
-.handicap-note::before {
-  content: ''; position: absolute; inset: 0; border-radius: var(--radius-sm);
-  background: radial-gradient(circle at 50% 50%, rgba(0,212,255,0.15), transparent 70%);
-  opacity: 0; transition: opacity 0.4s ease;
-}
-.handicap-note::after {
-  content: ''; position: absolute; inset: -2px; border-radius: calc(var(--radius-sm) + 2px);
-  background: linear-gradient(90deg, var(--blue), var(--violet), var(--cyan), var(--violet), var(--blue));
-  background-size: 300% 100%;
-  animation: handicapBorder 3s linear infinite;
-  z-index: -1;
-  opacity: 0; transition: opacity 0.4s ease;
-}
-.handicap-note:hover { transform: translateY(-6px) scale(1.01) rotateX(2deg); box-shadow: 0 0 0 2px rgba(0,212,255,0.4), 0 0 30px rgba(0,212,255,0.4), 0 0 60px rgba(124,58,237,0.25); }
-.handicap-note:hover::before { opacity: 1; }
-.handicap-note:hover::after { opacity: 1; }
-@keyframes handicapBorder {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
-}
-.handicap-note .handicap-inner { position: relative; z-index: 1; }
-.handicap-note strong { color: var(--violet); }
+.handicap-note .handicap-inner { position: relative; z-index: 1; line-height: 1.7; }
+.handicap-note strong { color: var(--violet); font-weight: 800; }
 
 /* ===== REFERENCES ===== */
 #references .ref-stats {
@@ -1043,10 +998,7 @@ footer .copyright {
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="hero">
-  <canvas id="starCanvas"></canvas>
-  <div class="hero-stars" id="starField"></div>
   <div class="hero-inner" id="heroCard">
-    <div class="shimmer"></div>
     <div class="hero-eyebrow">Plaquette de formation · Édition 2026</div>
     <h1>Automatisez<br><span>votre Entreprise</span></h1>
     <p class="subtitle">IA & Automatisation Business · Performance & Scalabilité</p>
@@ -1853,8 +1805,8 @@ footer .copyright {
       <div class="contact-name">Tahar RAIFAK</div>
       <div class="contact-role">Référent pédagogique, administratif & handicap</div>
       <div class="contact-info">
-        <div class="contact-line"><span class="ic">✉</span><span>infos@tr7agencystudio.com</span></div>
-        <div class="contact-line"><span class="ic">☎</span><span>07 88 39 11 64 · 01 83 87 37 55</span></div>
+        <div class="contact-line"><span class="ic">✉</span><span>contact@inaya-formation.fr</span></div>
+        <div class="contact-line"><span class="ic">☎</span><span>07 88 39 11 64</span></div>
         <div class="contact-line"><span class="ic">📍</span><span>8, rue des Colonels Renard, 75017 Paris</span></div>
       </div>
     </div>
@@ -1907,11 +1859,13 @@ function toggleModule(el) {
   if (!wasOpen) el.classList.add('open');
 }
 
-// ===== CANVAS STAR FIELD — After Effects Style =====
+// ===== CANVAS STAR FIELD — désactivé (fond remplacé par dark TR7) =====
 (function initStarField() {
   var canvas = document.getElementById('starCanvas');
   var hero = document.querySelector('.hero');
   if (!canvas || !hero) return;
+  // Canvas supprimé — retour immédiat
+  return;
 
   // Style canvas to cover the hero
   canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;';
@@ -2084,21 +2038,7 @@ function toggleModule(el) {
     mouse.x = 0.5; mouse.y = 0.5;
   });
 
-  // ===== HERO CARD 3D Tilt =====
-  var card = document.getElementById('heroCard');
-  if (card) {
-    hero.addEventListener('mousemove', function(e) {
-      var rect = card.getBoundingClientRect();
-      var cx = rect.left + rect.width / 2;
-      var cy = rect.top + rect.height / 2;
-      var rx = (e.clientY - cy) / rect.height * -10;
-      var ry = (e.clientX - cx) / rect.width * 10;
-      card.style.transform = 'perspective(1200px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateZ(10px)';
-    });
-    hero.addEventListener('mouseleave', function() {
-      card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0)';
-    });
-  }
+  // 3D Tilt désactivé sur le hero card
 })();
 
 // ===== iClosed MODAL =====
